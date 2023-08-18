@@ -11,7 +11,7 @@ import WebKit
 import UIKit
 import SwiftUI
 
-public protocol TamaraCheckoutDelegate: class {
+public protocol TamaraCheckoutDelegate: AnyObject {
 
     /// Called if the response is successful
     func onSuccessfull()
@@ -21,7 +21,7 @@ public protocol TamaraCheckoutDelegate: class {
 }
 
 
-class TamaraSDKCheckout: UIViewController {
+public class TamaraSDKCheckout: UIViewController {
     private var webView: WKWebView!
     private var url: String!
     public var delegate: TamaraCheckoutDelegate!

@@ -35,8 +35,8 @@ struct CapturePaymentRequest: Codable {
         self = try decoder.decode(CapturePaymentRequest.self, from: jsonData)
     }
     
-    func convertToJson() throws -> String {
-        let jsonData = try JSONEncoder().encode(self)
+    func convertToJson() -> String {
+        let jsonData = try! JSONEncoder().encode(self)
         return String(data: jsonData, encoding: .utf8)!
     }
 }
